@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name" translatable="false">Persian Subtitles</string>
+    <string name="app_name_full">Persian Subtitles</string>
+
+    <!-- Navigation -->
+    <string name="tab_translate">ترجمه</string>
+    <string name="tab_editor">ویرایشگر</string>
+    <string name="tab_style">سبک ترجمه</string>
+    <string name="tab_copyright">کپی‌رایت</string>
+    <string name="tab_settings">تنظیمات</string>
+    <string name="about_title">درباره برنامه</string>
+    <string name="nav_back">بازگشت</string>
+    <string name="about_back">بازگشت به صفحهٔ اصلی</string>
+
+    <!-- Generic actions -->
+    <string name="action_import">انتخاب فایل زیرنویس</string>
+    <string name="action_start">شروع ترجمه</string>
+    <string name="action_pause">توقف موقت</string>
+    <string name="action_resume">ادامه ترجمه</string>
+    <string name="action_review">بازبینی و تکمیل</string>
+    <string name="action_clear">پاک کردن فضای کاری</string>
+    <string name="action_save">ذخیره</string>
+    <string name="action_cancel">انصراف</string>
+    <string name="action_confirm">تأیید</string>
+    <string name="action_close">بستن</string>
+    <string name="action_retranslate">ترجمه مجدد این خط</string>
+    <string name="action_edit">ویرایش</string>
+    <string name="action_reset_default">بازگردانی به پیش‌فرض</string>
+    <string name="action_test_connection">تست اتصال به Gemini</string>
+    <string name="action_refresh_models">به‌روزرسانی فهرست مدل‌ها</string>
+    <string name="action_open_github">مشاهده در گیت‌هاب</string>
+    <string name="action_get_key">دریافت کلید رایگان</string>
+
+    <!-- Translate tab -->
+    <string name="translate_project_title">فایل زیرنویس</string>
+    <string name="translate_empty_title">هنوز زیرنویسی انتخاب نشده است</string>
+    <string name="translate_empty_desc">یک فایل SRT یا VTT انتخاب کنید تا ترجمهٔ آن به فارسی یا هر زبان دیگری که انتخاب کرده‌اید آغاز شود. پیشرفت کار ذخیره می‌شود و در صورت قطع اینترنت یا بسته شدن برنامه، از همان‌جا ادامه پیدا می‌کند.</string>
+    <string name="translate_progress_title">پیشرفت ترجمه</string>
+    <string name="translate_control_title">کنترل ترجمه</string>
+    <string name="translate_output_title">خروجی زیرنویس</string>
+    <string name="translate_workspace_title">فضای کاری</string>
+    <string name="translate_workspace_desc">با پاک کردن فضای کاری، فایل فعلی و همه ترجمه‌ها حذف می‌شوند تا برای زیرنویس جدید آماده شوید.</string>
+    <string name="translate_no_api_key">کلید API تنظیم نشده است. برای شروع، به تب تنظیمات بروید و کلید Gemini خود را وارد کنید.</string>
+    <string name="translate_model_label">مدل فعال</string>
+    <string name="translate_export_desc">خروجی بر اساس متن ترجمه‌شده و در صورت وجود، ویرایش‌های شما ساخته می‌شود.</string>
+    <string name="translate_review_desc">بازبینی، خطوط ترجمه‌نشده، ناقص یا مشکوک را پیدا کرده و دوباره ترجمه می‌کند.</string>
+
+    <!-- Status -->
+    <string name="status_idle">آماده</string>
+    <string name="status_running">در حال ترجمه</string>
+    <string name="status_paused">متوقف شده</string>
+    <string name="status_review">در حال بازبینی</string>
+    <string name="status_polish">در حال اصلاح نگارشی</string>
+    <string name="status_done">کامل شد</string>
+    <string name="status_error">خطا</string>
+    <string name="status_label">وضعیت</string>
+
+    <!-- Stats -->
+    <string name="stat_total">کل خطوط</string>
+    <string name="stat_translated">ترجمه‌شده</string>
+    <string name="stat_remaining">باقی‌مانده</string>
+    <string name="stat_flagged">نیازمند بررسی</string>
+    <string name="stat_ads">تبلیغ/کپی‌رایت</string>
+    <string name="stat_edited">ویرایش‌شده</string>
+
+    <!-- Export -->
+    <string name="export_srt">خروجی SRT</string>
+    <string name="export_vtt">خروجی VTT</string>
+    <string name="export_bilingual">خروجی دوزبانه (SRT)</string>
+    <string name="export_txt">خروجی متن ساده</string>
+
+    <!-- Dialogs -->
+    <string name="clear_confirm_title">پاک کردن فضای کاری؟</string>
+    <string name="clear_confirm_message">فایل فعلی، ترجمه‌ها و ویرایش‌های شما حذف می‌شوند. این کار قابل بازگشت نیست.</string>
+
+    <!-- Editor -->
+    <string name="editor_search_hint">جست‌وجو در متن اصلی یا ترجمه</string>
+    <string name="filter_all">همه</string>
+    <string name="filter_untranslated">ترجمه‌نشده</string>
+    <string name="filter_edited">ویرایش‌شده</string>
+    <string name="filter_flagged">نیازمند بررسی</string>
+    <string name="filter_ads">تبلیغاتی</string>
+    <string name="editor_empty">موردی برای نمایش نیست.</string>
+    <string name="editor_no_project">برای ویرایش، ابتدا یک فایل زیرنویس را در تب ترجمه انتخاب کنید.</string>
+    <string name="editor_source">متن اصلی</string>
+    <string name="editor_translation">ترجمه</string>
+    <string name="editor_dialog_title">ویرایش خط %1$d</string>
+    <string name="editor_result_count">%1$d خط</string>
+    <string name="editor_not_translated_yet">هنوز ترجمه نشده است</string>
+    <string name="editor_mark_ad">علامت‌گذاری به‌عنوان تبلیغ</string>
+    <string name="editor_unmark_ad">حذف علامت تبلیغ</string>
+    <string name="badge_edited">ویرایش‌شده</string>
+    <string name="badge_flagged">بررسی شود</string>
+    <string name="badge_ad">تبلیغ</string>
+
+    <!-- Style tab -->
+    <string name="style_presets_title">لحن و سبک ترجمه</string>
+    <string name="style_presets_desc">یکی از سبک‌های آماده را انتخاب کنید؛ این متن به‌عنوان دستور به هوش مصنوعی فرستاده می‌شود.</string>
+    <string name="style_custom_title">پرامپت اختصاصی شما</string>
+    <string name="style_custom_desc">هر دستور دلخواهی که اینجا بنویسید، بالاترین اولویت را دارد. مثلاً: «با لحن کمدی و خودمانی ترجمه کن».</string>
+    <string name="style_custom_hint">دستور اختصاصی خود را بنویسید…</string>
+    <string name="style_examples">نمونه‌های آماده</string>
+    <string name="style_advanced_title">تنظیمات پیشرفته ترجمه</string>
+    <string name="style_temperature">میزان خلاقیت (Temperature): %1$s</string>
+    <string name="style_temperature_desc">مقدار کم‌تر ترجمه دقیق‌تر و مقدار بیشتر ترجمه آزادتری می‌دهد.</string>
+    <string name="style_batch_size">تعداد خطوط در هر درخواست: %1$d</string>
+    <string name="style_batch_desc">عدد کوچک‌تر پایدارتر است و برای کلیدهای رایگان با محدودیت نرخ مناسب‌تر.</string>
+    <string name="style_keep_names">اسم‌های خاص را دست‌نخورده نگه دار</string>
+    <string name="style_keep_names_desc">نام افراد، مکان‌ها و برندها ترجمه یا تغییر داده نمی‌شوند.</string>
+    <string name="style_auto_review">بازبینی خودکار پس از پایان ترجمه</string>
+    <string name="style_auto_review_desc">در پایان، خطوط ناقص یا ترجمه‌نشده به‌طور خودکار دوباره ترجمه می‌شوند.</string>
+
+    <!-- Copyright tab -->
+    <string name="copyright_title">حذف تبلیغ و کپی‌رایت</string>
+    <string name="copyright_desc">بسیاری از زیرنویس‌ها بین دیالوگ‌ها نام کانال، آی‌دی تلگرام یا تبلیغ سایت دارند. این بخش آن خطوط را شناسایی و از خروجی حذف می‌کند.</string>
+    <string name="copyright_remove_ads">شناسایی و حذف خطوط تبلیغاتی</string>
+    <string name="copyright_remove_ads_desc">خطوط علامت‌خورده ترجمه نمی‌شوند و در خروجی نهایی نمی‌آیند.</string>
+    <string name="copyright_edges_only">فقط ابتدا و انتهای فایل بررسی شود</string>
+    <string name="copyright_edges_only_desc">برای جلوگیری از حذف اشتباهی دیالوگ‌های واقعی، فقط ۱۵ خط اول و آخر بررسی می‌شوند.</string>
+    <string name="copyright_strip_tags">حذف تگ‌های قالب‌بندی (مثل &lt;i&gt; و {\\an8})</string>
+    <string name="copyright_strip_tags_desc">تگ‌ها از متن پاک می‌شوند و ترجمه تمیزتری به دست می‌آید.</string>
+    <string name="copyright_patterns_title">الگوهای شناسایی</string>
+    <string name="copyright_patterns_desc">هر خط یک الگو (Regex یا متن ساده) است. می‌توانید نام کانال یا سایت مورد نظر خود را اضافه کنید.</string>
+    <string name="copyright_rescan">بررسی مجدد فایل فعلی</string>
+    <string name="copyright_detected">%1$d خط تبلیغاتی شناسایی شد.</string>
+    <string name="copyright_signature_title">امضای مترجم</string>
+    <string name="copyright_signature_desc">در انتهای خروجی یک خط با متن شما اضافه می‌شود.</string>
+    <string name="copyright_signature_enable">افزودن امضا به خروجی</string>
+    <string name="copyright_signature_hint">مثلاً: ترجمه از کانال من</string>
+
+    <!-- Settings tab -->
+    <string name="settings_api_title">کلید API جمینای</string>
+    <string name="settings_api_desc">کلید رایگان Google AI Studio را وارد کنید. کلید فقط روی همین دستگاه ذخیره می‌شود و جایی ارسال نمی‌شود.</string>
+    <string name="settings_api_key_hint">کلید API را اینجا وارد کنید</string>
+    <string name="settings_show_key">نمایش کلید</string>
+    <string name="settings_hide_key">پنهان کردن کلید</string>
+    <string name="settings_test_running">در حال بررسی اتصال…</string>
+    <string name="settings_test_ok">اتصال برقرار است. %1$d مدل رایگان در دسترس شماست.</string>
+    <string name="settings_test_fail">اتصال برقرار نشد: %1$s</string>
+    <string name="settings_models_title">مدل‌های رایگان جمینای</string>
+    <string name="settings_models_desc">فقط مدل‌هایی نشان داده می‌شوند که روی کلید رایگان جمینای کار می‌کنند؛ بقیه مدل‌ها فیلتر شده‌اند.</string>
+    <string name="settings_models_loading">در حال دریافت فهرست مدل‌ها…</string>
+    <string name="settings_models_empty">فهرست مدل‌ها در دسترس نیست؛ فهرست پیش‌فرض نمایش داده می‌شود.</string>
+    <string name="settings_model_preview">پیش‌نمایش</string>
+    <string name="settings_network_title">شبکه و اعلان‌ها</string>
+    <string name="settings_wifi_only">ترجمه فقط با وای‌فای</string>
+    <string name="settings_wifi_only_desc">با فعال بودن این گزینه، ترجمه روی داده تلفن همراه ادامه پیدا نمی‌کند.</string>
+    <string name="settings_notif_permission">اجازه نمایش اعلان پیشرفت</string>
+    <string name="settings_notif_permission_desc">برای دیدن پیشرفت ترجمه در نوار اعلان لازم است.</string>
+    <string name="settings_notif_granted">اجازه اعلان داده شده است.</string>
+
+    <!-- About -->
+    <string name="about_app_desc">«Persian Subtitles» یک مترجم هوشمند زیرنویس است که فایل‌های SRT و VTT را با استفاده از هوش مصنوعی Gemini به فارسی روان ترجمه می‌کند. ترجمه در پس‌زمینه ادامه پیدا می‌کند، پس از قطع اینترنت یا بسته شدن برنامه از همان‌جا ادامه می‌یابد و در پایان یک بازبینی کامل روی خطوط ناقص انجام می‌شود.</string>
+    <string name="about_feature_1">ترجمه با کلید رایگان Gemini و انتخاب از میان مدل‌های رایگان</string>
+    <string name="about_feature_2">ادامه خودکار ترجمه پس از خطا، قطع اینترنت یا بسته شدن برنامه</string>
+    <string name="about_feature_3">سبک‌های آماده ترجمه و امکان نوشتن پرامپت اختصاصی</string>
+    <string name="about_feature_4">حذف تبلیغ و کپی‌رایت از میان خطوط زیرنویس</string>
+    <string name="about_feature_5">ویرایشگر خط‌به‌خط برای اصلاح ترجمه</string>
+    <string name="about_feature_6">خروجی SRT، VTT، دوزبانه و متن ساده</string>
+    <string name="about_developer_name">QW-AI-Code</string>
+    <string name="about_github_url">https://github.com/QW-AI-Code</string>
+    <string name="about_version">نسخه %1$s</string>
+    <string name="about_license_title">مجوز و اعتبارها</string>
+    <string name="about_license_desc">این برنامه با مجوز MIT منتشر شده است. قلم فارسی برنامه Vazirmatn (مجوز OFL) و موتور ترجمه Google Gemini است.</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel_name">پیشرفت ترجمه</string>
+    <string name="notif_channel_desc">اعلان مربوط به ترجمه زیرنویس در پس‌زمینه</string>
+    <string name="notif_translating">در حال ترجمه: %1$d از %2$d خط</string>
+    <string name="notif_reviewing">در حال بازبینی نهایی زیرنویس…</string>
+    <string name="notif_analyzing">در حال مطالعهٔ کل زیرنویس…</string>
+    <string name="notif_done">ترجمه زیرنویس کامل شد</string>
+    <string name="notif_error">ترجمه با خطا متوقف شد</string>
+    <string name="notif_waiting">در انتظار اتصال به اینترنت…</string>
+
+    <!-- Messages / errors -->
+    <string name="msg_import_ok">%1$d خط زیرنویس بارگذاری شد.</string>
+    <string name="msg_brief_cleared">شناخت قبلی پاک شد؛ در اجرای بعدی زیرنویس دوباره مطالعه می‌شود.</string>
+    <string name="msg_export_ok">فایل خروجی ذخیره شد.</string>
+    <string name="msg_cleared">فضای کاری پاک شد.</string>
+    <string name="msg_saved">ذخیره شد.</string>
+    <string name="msg_queued_line">این خط برای ترجمه مجدد در نوبت قرار گرفت.</string>
+    <string name="msg_default_patterns_restored">الگوهای پیش‌فرض بازگردانی شد.</string>
+    <string name="error_no_api_key">ابتدا کلید API جمینای را در تنظیمات وارد کنید.</string>
+    <string name="error_no_project">فایل زیرنویسی برای این کار وجود ندارد.</string>
+    <string name="error_import">خواندن فایل ممکن نشد؛ از فرمت SRT یا VTT استفاده کنید.</string>
+    <string name="error_export">ذخیره فایل خروجی ممکن نشد.</string>
+    <string name="error_auth">کلید API معتبر نیست یا دسترسی ندارد.</string>
+    <string name="error_quota">کلید به سقف درخواست در دقیقه رسیده است؛ برنامه چند لحظه صبر می‌کند و خودکار ادامه می‌دهد.</string>
+    <string name="error_quota_daily">سهمیهٔ رایگان امروزِ این کلید برای مدل انتخاب‌شده تمام شده است؛ مدل دیگری انتخاب کنید یا بعد از بازنشانی سهمیه ادامه دهید.</string>
+    <string name="error_server">سرور جمینای پاسخ نداد؛ تلاش مجدد به‌صورت خودکار انجام می‌شود.</string>
+    <string name="error_network">اتصال اینترنت برقرار نیست.</string>
+    <string name="error_parse">پاسخ مدل قابل خواندن نبود.</string>
+    <string name="error_safety">مدل ترجمه این بخش را رد کرد؛ متن حساس تشخیص داده شد.</string>
+    <string name="error_unknown">خطای نامشخص.</string>
+
+    <!-- About -->
+    <string name="about_tagline">ترجمهٔ حرفه‌ای زیرنویس به فارسی و ۳۰ زبان دیگر با هوش مصنوعی جمینای — سریع، موازی و قابل ادامه.</string>
+    <string name="about_developer_title">سازنده</string>
+    <string name="about_developer_desc">توسعه‌دهندهٔ نرم‌افزارهای آزاد و ابزارهای هوش مصنوعی فارسی.</string>
+    <string name="about_open_profile">پروفایل گیت‌هاب سازنده</string>
+    <string name="about_profile_url" translatable="false">https://github.com/QW-AI-Code</string>
+    <string name="about_features_title">امکانات</string>
+    <string name="about_feature_parallel">ترجمهٔ موازی چند دسته‌ای با تنظیم خودکار سرعت بر اساس سهمیهٔ رایگان</string>
+    <string name="about_feature_resume">ادامهٔ خودکار پس از قطع اینترنت، بستن برنامه یا خاموش‌شدن صفحه</string>
+    <string name="about_feature_review">بازبینی نهایی و تکمیل خودکار خطوط ناقص یا ترجمه‌نشده</string>
+    <string name="about_feature_styles">۱۰ پریست لحن به‌همراه پرامپت اختصاصی شما</string>
+    <string name="about_feature_editor">ویرایش خط‌به‌خط و ترجمهٔ مجدد هر خط به‌تنهایی</string>
+    <string name="about_feature_copyright">تشخیص و حذف خطوط تبلیغ و کپی‌رایت با الگوهای قابل ویرایش</string>
+    <string name="about_feature_languages">ترجمه به فارسی و ۳۰ زبان دیگر، با انتخاب زبان از روی پرچم کشورها</string>
+    <string name="about_feature_formats">خروجی استاندارد SRT، WebVTT، دوزبانه و متن ساده</string>
+    <string name="about_privacy_title">حریم خصوصی</string>
+    <string name="about_privacy_desc">کلید API و زیرنویس‌های شما فقط روی همین دستگاه ذخیره می‌شوند. متن زیرنویس تنها برای ترجمه به سرور جمینای گوگل فرستاده می‌شود و هیچ سرور واسطی در این میان وجود ندارد.</string>
+
+    <!-- Editor -->
+    <string name="editor_no_results">نتیجه‌ای برای این جست‌وجو یا فیلتر پیدا نشد.</string>
+    <string name="editor_not_translated">هنوز ترجمه نشده</string>
+    <string name="editor_dialog_field">ترجمه</string>
+    <string name="action_toggle_ad">علامت‌گذاری به‌عنوان تبلیغ</string>
+    <string name="badge_preview">آزمایشی</string>
+
+    <!-- Copyright -->
+    <string name="copyright_remove_title">حذف خطوط تبلیغ و کپی‌رایت</string>
+    <string name="copyright_remove_desc">خطوط شناسایی‌شده ترجمه نمی‌شوند و در فایل خروجی نمی‌آیند.</string>
+    <string name="copyright_edges_title">فقط ابتدا و انتهای فایل</string>
+    <string name="copyright_edges_desc">جست‌وجو محدود به ۱۵ خط اول و آخر می‌شود؛ ایمن‌ترین حالت، چون دیالوگ‌های میان فیلم دست‌نخورده می‌مانند.</string>
+    <string name="copyright_patterns_label">الگوها (هر خط یک عبارت یا regex)</string>
+    <string name="copyright_restore_defaults">بازگرداندن الگوهای پیش‌فرض</string>
+    <string name="copyright_strip_tags_title">حذف تگ‌های قالب‌بندی</string>
+
+    <!-- Signature -->
+    <string name="signature_title">امضای شما</string>
+    <string name="signature_desc">متن شما به‌صورت هوشمند در چند نقطه از زیرنویس، فقط در بازه‌های بدون دیالوگ، اضافه می‌شود.</string>
+    <string name="signature_enable">افزودن امضا به خروجی</string>
+    <string name="signature_label">متن امضا</string>
+
+    <!-- Style -->
+    <string name="style_custom_label">پرامپت اختصاصی شما</string>
+    <string name="style_examples_title">نمونه‌های آماده (برای افزودن لمس کنید)</string>
+    <string name="style_temperature_title">میزان خلاقیت</string>
+    <string name="style_temperature_hint">مقدار کم (زیر ۰٫۵) ترجمهٔ دقیق‌تر و یکدست‌تر می‌دهد؛ مقدار بالا لحن آزادتر و خلاقانه‌تر، اما احتمال خطا بیشتر است.</string>
+
+    <!-- Settings: API -->
+    <string name="settings_api_label">کلید API جمینای</string>
+    <string name="settings_api_test">تست کلید API</string>
+    <string name="settings_api_ok">کلید سالم است — %1$d مدل رایگان در دسترس شماست.</string>
+    <string name="settings_api_get_key">دریافت کلید رایگان از Google AI Studio</string>
+    <string name="settings_api_toggle_visibility">نمایش یا پنهان‌کردن کلید</string>
+    <string name="settings_models_refresh">به‌روزرسانی فهرست مدل‌ها</string>
+    <string name="settings_models_free_note">فقط مدل‌هایی نمایش داده می‌شوند که با همین کلید و در سطح رایگان کار می‌کنند.</string>
+
+    <!-- Settings: speed -->
+    <string name="settings_speed_title">سرعت ترجمه</string>
+    <string name="settings_speed_desc">ترجمه به‌صورت موازی انجام می‌شود؛ این دو تنظیم مشخص می‌کنند چند دسته هم‌زمان فرستاده شود.</string>
+    <string name="settings_concurrency_value">درخواست‌های هم‌زمان: %1$d</string>
+    <string name="settings_concurrency_hint">هرچه بیشتر، ترجمه سریع‌تر. اگر به سهمیهٔ رایگان برخورد کنیم، برنامه خودش تعداد را کم می‌کند و بعد دوباره بالا می‌برد — پس ترجمه هیچ‌وقت متوقف نمی‌شود.</string>
+    <string name="settings_batch_value">تعداد خط در هر درخواست: %1$d</string>
+    <string name="settings_batch_hint">دسته‌های بزرگ‌تر سریع‌ترند و متن یکدست‌تری می‌سازند؛ دسته‌های کوچک‌تر برای مدل‌های سبک مطمئن‌ترند.</string>
+    <string name="settings_speed_estimate">با تنظیم فعلی حدود %1$d خط در هر دور ترجمه می‌شود.</string>
+
+    <!-- Settings: behaviour -->
+    <string name="settings_behaviour_title">رفتار برنامه</string>
+    <string name="settings_auto_review_title">بازبینی خودکار در پایان</string>
+    <string name="settings_auto_review_desc">پس از اتمام، همهٔ زیرنویس بررسی و خطوط ناقص یا ترجمه‌نشده دوباره ترجمه می‌شوند.</string>
+    <string name="settings_proper_names_title">حفظ نام‌های خاص</string>
+    <string name="settings_proper_names_desc">نام افراد، مکان‌ها و برندها به لاتین باقی می‌مانند.</string>
+    <string name="settings_wifi_only_title">فقط با وای‌فای</string>
+
+
+    <!-- signature: smart placement -->
+    <string name="signature_count_value">تعداد امضا در طول زیرنویس: %1$d</string>
+    <string name="signature_smart_hint">امضاها بین دیالوگ‌ها و در بازه‌های خالی پخش می‌شوند؛ زمان‌بندی هیچ دیالوگی جابه‌جا نمی‌شود.</string>
+
+    <!-- translation finished -->
+    <string name="done_dialog_title">ترجمه کامل شد</string>
+    <string name="done_dialog_message">%1$d خط از %2$d خط ترجمه شد. فایل آماده گرفتن خروجی است.</string>
+    <string name="done_dialog_flagged">%1$d خط برای بازبینی علامت خورده است.</string>
+    <string name="done_dialog_skipped">%1$d خط را مدل ترجمه نکرد و متن اصلی آن نگه داشته شد.</string>
+    <string name="done_dialog_ads">%1$d خط تبلیغ یا کپی‌رایت شناسایی شد.</string>
+    <string name="action_ok">باشه</string>
+    <!-- reading the whole subtitle before translating -->
+    <string name="settings_read_whole_title">مطالعهٔ کل زیرنویس پیش از ترجمه</string>
+    <string name="settings_read_whole_desc">یک درخواست اضافه در ابتدای کار: هوش مصنوعی کل زیرنویس را می‌خواند و داستان، شخصیت‌ها، معادل فارسی نام‌ها، سطح خطاب (تو/شما) و مناسب‌ترین لحن ترجمه را مشخص می‌کند. بعد همین شناخت به همهٔ بخش‌ها داده می‌شود تا ترجمه یکدست و مرتبط باشد.</string>
+    <string name="brief_title">شناخت اثر</string>
+    <string name="brief_desc">حاصل مطالعهٔ کل زیرنویس؛ مبنای ترجمهٔ همهٔ خطوط.</string>
+    <string name="brief_characters">شخصیت‌ها</string>
+    <string name="brief_glossary">اصطلاح‌های ثابت</string>
+    <string name="brief_reread">مطالعهٔ دوبارهٔ زیرنویس</string>
+
+    <!-- direction of the exported file -->
+    <string name="settings_bidi_title">جهت متن در فایل خروجی</string>
+    <string name="settings_bidi_desc">اگر در پخش‌کنندهٔ تو علائم نگارشی یا کروشه‌ها جابه‌جا نشان داده می‌شوند، حالت دیگری را امتحان کن؛ پخش‌کننده‌ها در پشتیبانی از جهت متن یکسان نیستند.</string>
+    <string name="bidi_smart">هوشمند (پیشنهادی)</string>
+    <string name="bidi_smart_desc">نشانهٔ راست‌به‌چپ در دو سر هر خط فارسی و در دو طرف هر عبارت انگلیسی داخل جمله. این نشانه عرض صفر دارد، در هیچ پخش‌کننده‌ای به شکل مربع خالی دیده نمی‌شود و جای درست کروشه‌ها و نقطه را تضمین می‌کند.</string>
+    <string name="bidi_isolate">استاندارد یونیکد (ایزوله)</string>
+    <string name="bidi_isolate_desc">به‌جای نشانهٔ راست‌به‌چپ، از جداکنندهٔ رسمی یونیکد (FSI/PDI) دور عبارت‌های انگلیسی استفاده می‌کند. دقیق‌ترین حالت برای پخش‌کننده‌های جدید مثل MPV و VLC؛ اما پخش‌کننده‌های قدیمی‌تر ممکن است این دو کاراکتر را به شکل مربع خالی نشان بدهند.</string>
+    <string name="bidi_strong">هوشمند + قالب صریح</string>
+    <string name="bidi_strong_desc">همان حالت هوشمند به‌اضافهٔ RLE/PDF، برای پخش‌کننده‌هایی که به قالب صریح نیاز دارند.</string>
+    <string name="bidi_none">بدون نشانه</string>
+    <string name="bidi_none_desc">متن تمیز و بدون هیچ نشانه؛ برای پخش‌کننده‌های دقیق مثل MPV یا ویرایش فایل در برنامه‌های دیگر.</string>
+    <string name="settings_persian_punct_title">علائم نگارشی فارسی در خروجی</string>
+    <string name="settings_persian_punct_desc">در خطوط فارسی (و زبان‌های هم‌خط مثل عربی، اردو و پشتو)، «,» و «;» و «?» به «،» و «؛» و «؟» تبدیل می‌شوند — به‌جز داخل عبارت‌های انگلیسی.</string>
+
+    <!-- direction: the isolate mode -->
+
+    <!-- editorial pass after the translation -->
+    <string name="action_polish">اسکن و اصلاح نگارشی</string>
+    <string name="translate_polish_desc">متن ترجمه‌شده را بازبینی می‌کند: غلط املایی، کلمهٔ جامانده به زبان مبدأ، حروف خط اشتباه و جملهٔ ناقص؛ و برای فارسی، حروف عربی و نیم‌فاصله هم روی گوشی اصلاح می‌شود. خطوطی که خودتان ویرایش کرده‌اید دست‌نخورده می‌مانند.</string>
+    <string name="notif_polishing">در حال اصلاح نگارشی زیرنویس…</string>
+    <string name="notif_polish_done">اصلاح نگارشی زیرنویس کامل شد</string>
+    <string name="msg_polish_done">اصلاح نگارشی تمام شد؛ فایل آمادهٔ گرفتن خروجی است.</string>
+    <string name="msg_polish_started">اسکن نگارشی شروع شد؛ پیشرفت در همین تب دیده می‌شود.</string>
+    <string name="settings_auto_polish_title">اصلاح نگارشی خودکار در پایان</string>
+    <string name="settings_auto_polish_desc">پس از ترجمه، همهٔ خطوط از نظر املا و فاصله‌گذاری روی خود گوشی اصلاح می‌شوند و فقط خطوطی که هنوز مشکل دارند دوباره به هوش مصنوعی سپرده می‌شوند.</string>
+
+    <!-- brief -->
+    <string name="brief_summary">خلاصهٔ داستان</string>
+    <string name="brief_tone">لحن اثر</string>
+    <string name="brief_formality">سطح زبان و خطاب</string>
+    <string name="brief_show_details">نمایش شخصیت‌ها و اصطلاح‌ها (%1$d مورد)</string>
+    <string name="brief_hide_details">بستن شخصیت‌ها و اصطلاح‌ها (%1$d مورد)</string>
+
+    <!-- style: which instruction is in charge -->
+    <string name="style_mode_preset">استفاده از لحن‌های آماده</string>
+    <string name="style_mode_custom">فقط پرامپت اختصاصی من</string>
+    <string name="style_mode_custom_empty">پرامپت اختصاصی خالی است؛ تا زمانی که متنی ننویسید، برنامه از لحن پیش‌فرض استفاده می‌کند.</string>
+
+    <!-- signature templates -->
+    <string name="signature_templates_open">انتخاب از قالب‌های آماده</string>
+    <string name="signature_templates_title">قالب‌های حرفه‌ای امضا</string>
+    <string name="signature_templates_desc">نام یا نام کانالتان را بنویسید و یکی از قالب‌ها را لمس کنید؛ متن در کادر امضا قرار می‌گیرد و باز هم قابل ویرایش است.</string>
+    <string name="signature_templates_name">نام یا کانال شما</string>
+
+    <!-- target language -->
+    <string name="language_title">زبان مقصد ترجمه</string>
+    <string name="language_desc">زیرنویس به این زبان ترجمه می‌شود. پیش‌فرض فارسی است؛ با یک لمس روی پرچم، زبان را عوض کنید.</string>
+    <string name="language_choose">همهٔ زبان‌ها (%1$d زبان)</string>
+    <string name="language_picker_title">انتخاب زبان مقصد</string>
+    <string name="language_search_hint">جست‌وجو: آلمانی، German، Deutsch…</string>
+    <string name="language_no_result">زبانی با این نام پیدا نشد.</string>
+    <string name="language_locked_running">تا وقتی ترجمه در حال اجراست، زبان قابل تغییر نیست. اول کار را متوقف کنید.</string>
+    <string name="language_confirm_title">تغییر زبان به %1$s؟</string>
+    <string name="language_confirm_message">ترجمه‌های فعلی به زبان قبلی هستند و پاک می‌شوند تا در فایل جدید قاطی نشوند. خود زیرنویس، زمان‌بندی و علامت‌های تبلیغ حفظ می‌شوند و شناخت اثر هم برای زبان جدید دوباره ساخته می‌شود.</string>
+    <string name="msg_language_changed">زبان مقصد: %1$s</string>
+    <string name="msg_language_changed_reset">زبان مقصد به %1$s تغییر کرد و ترجمه‌های قبلی پاک شد. برای ترجمهٔ دوباره، «شروع ترجمه» را بزنید.</string>
+    <string name="error_language_while_running">تا وقتی ترجمه در حال اجراست، زبان قابل تغییر نیست.</string>
+
+    <!-- badges -->
+    <string name="badge_active">فعال</string>
+
+    <!-- automatic tone -->
+    <string name="style_auto_tone_card">لحن هوشمند</string>
+    <string name="style_auto_tone_title">تشخیص خودکار لحن با هوش مصنوعی</string>
+    <string name="style_auto_tone_desc">وقتی هوش مصنوعی کل زیرنویس را خواند و موضوع و فضای اثر دستش آمد، خودش مناسب‌ترین لحن را از میان لحن‌های آماده انتخاب و همین‌جا تنظیم می‌کند. بعد از آن هم می‌توانید لحن را دستی عوض کنید.</string>
+    <string name="style_auto_tone_needs_read">برای این قابلیت، «مطالعهٔ کل زیرنویس پیش از ترجمه» در تب تنظیمات باید روشن باشد.</string>
+    <string name="style_auto_tone_custom">در حالت «فقط پرامپت اختصاصی من» لحن‌های آماده استفاده نمی‌شوند، پس لحن خودکار هم اعمال نمی‌شود.</string>
+    <string name="style_auto_tone_applied">هوش مصنوعی بعد از مطالعهٔ زیرنویس، لحن «%1$s» را برای این اثر انتخاب کرد.</string>
+    <string name="badge_auto_tone">انتخاب هوش مصنوعی</string>
+    <string name="brief_tone_preset">لحن ترجمه (انتخاب خودکار)</string>
+
+    <!-- personal glossary -->
+    <string name="style_glossary_title">واژه‌نامهٔ اختصاصی</string>
+    <string name="style_glossary_desc">معادل‌هایی که همیشه باید همین‌طور ترجمه شوند؛ مثل نام شخصیت‌ها یا اصطلاح‌های یک سریال. این فهرست به همهٔ درخواست‌ها فرستاده می‌شود و بر معادل‌های پیشنهادی هوش مصنوعی مقدم است.</string>
+    <string name="style_glossary_label">هر خط: واژهٔ اصلی = معادل</string>
+    <string name="style_glossary_example">مثال: Winterfell = وینترفل</string>
+    <string name="style_glossary_count">%1$d واژه ثبت شده و در ترجمه رعایت می‌شود.</string>
+
+    <!-- timing sync -->
+    <string name="sync_title">همگام‌سازی زمان</string>
+    <string name="sync_desc">اگر زیرنویس زودتر یا دیرتر از صدای فیلم نشان داده می‌شود، همهٔ خطوط فایل خروجی را جابه‌جا کنید. زمان‌بندی خود پروژه دست‌نخورده می‌ماند.</string>
+    <string name="sync_none">بدون جابه‌جایی</string>
+    <string name="sync_value">%1$s ثانیه</string>
+    <string name="sync_earlier">%1$s ثانیه زودتر</string>
+    <string name="sync_later">%1$s ثانیه دیرتر</string>
+    <string name="sync_reset">صفر کردن</string>
+
+    <!-- speed and time left -->
+    <string name="eta_calculating">در حال محاسبهٔ سرعت…</string>
+    <string name="eta_line">%1$s خط در دقیقه · %2$s</string>
+    <string name="eta_under_minute">کمتر از یک دقیقه مانده</string>
+    <string name="eta_minutes">حدود %1$s دقیقه مانده</string>
+    <string name="eta_hours">حدود %1$s ساعت و %2$s دقیقه مانده</string>
+
+    <!-- about (redesigned) -->
+    <string name="about_features_subtitle">هر چیزی که برای یک ترجمهٔ حرفه‌ای لازم است، در یک برنامه.</string>
+    <string name="about_chip_gemini">موتور Gemini</string>
+    <string name="about_chip_open_source">متن‌باز · MIT</string>
+    <string name="about_stat_languages_value">۳۱</string>
+    <string name="about_stat_languages">زبان مقصد</string>
+    <string name="about_stat_tones_value">۱۰</string>
+    <string name="about_stat_tones">لحن آماده</string>
+    <string name="about_stat_device_value">۱۰۰٪</string>
+    <string name="about_stat_device">روی گوشی شما</string>
+    <string name="about_footer">ساخته‌شده برای مترجم‌های فارسی‌زبان</string>
+    <string name="about_f_read_title">مطالعهٔ کل زیرنویس</string>
+    <string name="about_f_read_desc">پیش از ترجمه، داستان، شخصیت‌ها، معادل نام‌ها و سطح خطاب مشخص می‌شود تا کل فایل یکدست بماند.</string>
+    <string name="about_f_tone_title">لحن هوشمند</string>
+    <string name="about_f_tone_desc">هوش مصنوعی بعد از شناخت اثر، مناسب‌ترین لحن ترجمه را خودش انتخاب و تنظیم می‌کند.</string>
+    <string name="about_f_lang_title">فارسی و ۳۰ زبان دیگر</string>
+    <string name="about_f_lang_desc">انتخاب زبان مقصد با یک لمس روی پرچم، با قواعد نگارشی و جهت متن درست برای هر زبان.</string>
+    <string name="about_f_parallel_title">ترجمهٔ موازی و سریع</string>
+    <string name="about_f_parallel_desc">چند دسته هم‌زمان، با تنظیم خودکار سرعت بر اساس سهمیهٔ رایگان.</string>
+    <string name="about_f_resume_title">ادامه از همان‌جا</string>
+    <string name="about_f_resume_desc">قطع اینترنت، بستن برنامه یا خاموش‌شدن صفحه، کار را از اول شروع نمی‌کند.</string>
+    <string name="about_f_review_title">بازبینی و اصلاح نگارشی</string>
+    <string name="about_f_review_desc">خطوط ناقص دوباره ترجمه و غلط‌های نگارشی، حروف عربی و نیم‌فاصله اصلاح می‌شوند.</string>
+    <string name="about_f_glossary_title">واژه‌نامهٔ اختصاصی</string>
+    <string name="about_f_glossary_desc">معادل‌های ثابت خودتان را یک بار بنویسید؛ در تمام فایل رعایت می‌شوند.</string>
+    <string name="about_f_style_title">۱۰ لحن آماده و پرامپت شما</string>
+    <string name="about_f_style_desc">از روان و سینمایی تا انیمه و مستند، یا فقط دستور اختصاصی خودتان.</string>
+    <string name="about_f_editor_title">ویرایشگر خط‌به‌خط</string>
+    <string name="about_f_editor_desc">جست‌وجو، فیلتر، ویرایش دستی و ترجمهٔ دوبارهٔ هر خط به‌تنهایی.</string>
+    <string name="about_f_sync_title">همگام‌سازی زمان</string>
+    <string name="about_f_sync_desc">زیرنویسی که زودتر یا دیرتر از فیلم است، با چند لمس در خروجی جابه‌جا می‌شود.</string>
+    <string name="about_f_eta_title">سرعت و زمان باقی‌مانده</string>
+    <string name="about_f_eta_desc">حین ترجمه می‌بینید چند خط در دقیقه ترجمه می‌شود و کار کی تمام می‌شود.</string>
+    <string name="about_f_copyright_title">حذف تبلیغ و امضای هوشمند</string>
+    <string name="about_f_copyright_desc">خطوط تبلیغاتی حذف و امضای شما فقط در بازه‌های بدون دیالوگ اضافه می‌شود.</string>
+    <string name="about_f_formats_title">خروجی استاندارد</string>
+    <string name="about_f_formats_desc">SRT، WebVTT، دوزبانه و متن ساده، با نام فایل دارای کد زبان.</string>
+
+    <!-- Limit reached (quota) dialog -->
+    <string name="quota_daily_title">سهمیهٔ رایگان کلید تمام شد</string>
+    <string name="quota_daily_message">کلید API شما به سقف مصرف روزانهٔ رایگانِ مدل «%1$s» رسیده است. پیشرفت ترجمه ذخیره شده و چیزی از دست نمی‌رود.</string>
+    <string name="quota_reset_in">سهمیهٔ این مدل حدود %1$s دیگر (نیمه‌شب به وقت کالیفرنیا) دوباره پر می‌شود.</string>
+    <string name="quota_suggest_model">سهمیهٔ هر مدل جداست؛ می‌توانید همین حالا با «%1$s» ادامه دهید.</string>
+    <string name="quota_no_suggestion">مدل رایگان دیگری با سهمیهٔ باقی‌مانده پیدا نشد. تا بازنشانی سهمیه صبر کنید یا کلید API دیگری وارد کنید.</string>
+    <string name="quota_minute_title">به سقف محدودیت کلید رسیدید</string>
+    <string name="quota_minute_message">جمینای فعلاً درخواست بیشتری از کلید رایگان شما نمی‌پذیرد (محدودیت تعداد درخواست در دقیقه). نگران نباشید: برنامه خودکار صبر می‌کند و ترجمه را از همان‌جا ادامه می‌دهد.</string>
+    <string name="quota_minute_tip_concurrency">با %1$s درخواست همزمان زودتر به این سقف می‌رسید؛ کم کردن آن کمک می‌کند.</string>
+    <string name="quota_minute_tip_model">مدل «%1$s» سهمیهٔ بیشتری دارد و دیرتر به سقف می‌رسد.</string>
+    <string name="quota_duration_hm">%1$s ساعت و %2$s دقیقه</string>
+    <string name="quota_duration_m">%1$s دقیقه</string>
+    <string name="action_continue_with">ادامه با %1$s</string>
+    <string name="action_use_model">استفاده از %1$s</string>
+    <string name="action_reduce_concurrency">کاهش درخواست همزمان</string>
+    <string name="action_later">بعداً</string>
+    <string name="msg_model_switched">مدل به %1$s تغییر کرد.</string>
+    <string name="msg_concurrency_reduced">درخواست همزمان روی %1$d تنظیم شد.</string>
+
+    <!-- AI analysis dialog -->
+    <string name="analysis_title">هوش مصنوعی در حال مطالعهٔ زیرنویس</string>
+    <string name="analysis_desc">کل زیرنویس یک‌بار خوانده می‌شود تا داستان، شخصیت‌ها، لحن و اصطلاحات اثر شناخته شود؛ بعد از آن ترجمه خودکار شروع می‌شود.</string>
+    <string name="analysis_step_read">آماده‌سازی متن زیرنویس (%1$s خط)</string>
+    <string name="analysis_step_send">ارسال به جمینای و تحلیل محتوا</string>
+    <string name="analysis_step_apply">تنظیم لحن و واژه‌نامهٔ اثر</string>
+    <string name="analysis_waiting_quota">کلید به سقف درخواست در دقیقه رسید؛ چند لحظه صبر می‌کنیم و دوباره تلاش می‌کنیم…</string>
+    <string name="analysis_elapsed">زمان سپری‌شده: %1$s</string>
+    <string name="analysis_estimate">زمان تقریبی: %1$s</string>
+    <string name="analysis_slow">کمی بیشتر از معمول طول کشیده؛ پاسخ جمینای در راه است…</string>
+    <string name="analysis_done_title">مطالعهٔ زیرنویس کامل شد</string>
+    <string name="analysis_done_found">اثر شناخته شد: %1$s</string>
+    <string name="analysis_done_tone">لحن پیشنهادی هوش مصنوعی: %1$s</string>
+    <string name="analysis_done_generic">شناخت اثر آماده است؛ ترجمه شروع شد.</string>
+    <string name="analysis_failed_title">مطالعهٔ زیرنویس انجام نشد</string>
+    <string name="analysis_failed">این بار تحلیل انجام نشد؛ ترجمه بدون آن ادامه می‌یابد. بعداً می‌توانید از «مطالعهٔ دوبارهٔ زیرنویس» استفاده کنید.</string>
+    <string name="action_hide_background">ادامه در پس‌زمینه</string>
+    <string name="about_developer_avatar">تصویر پروفایل سازنده</string>
+
+    <!-- Gemini token usage (settings) -->
+    <string name="usage_title">میزان مصرف توکن API جمینای</string>
+    <string name="usage_desc">مصرف امروز کلید شما برای هر مدل، دقیقاً با همان اعدادی که سرور جمینای گوگل در پاسخ هر درخواست گزارش می‌کند، و فاصله‌اش تا سقف محدودیت.</string>
+    <string name="usage_requests_today">درخواست‌های امروز</string>
+    <string name="usage_input_tokens_today">توکن ورودی امروز</string>
+    <string name="usage_requests_minute">درخواست در یک دقیقهٔ اخیر</string>
+    <string name="usage_tokens_minute">توکن ورودی در یک دقیقهٔ اخیر</string>
+    <string name="usage_used_of">%1$s از %2$s مصرف شده — %3$s مانده (٪%4$s)</string>
+    <string name="usage_used_no_limit">%1$s مصرف شده — سقف هنوز از طرف گوگل اعلام نشده؛ می‌توانید خودتان تعیینش کنید.</string>
+    <string name="usage_total_today">مجموع توکن امروز: %1$s</string>
+    <string name="usage_breakdown">ورودی %1$s · خروجی %2$s · تفکر %3$s</string>
+    <string name="usage_limit_manual">دستی</string>
+    <string name="usage_set_limits">تعیین سقف دستی</string>
+    <string name="usage_reset_in">سهمیهٔ روزانهٔ جمینای %1$s دیگر (نیمه‌شب به وقت اقیانوس آرام آمریکا) صفر می‌شود.</string>
+    <string name="usage_duration">%1$s ساعت و %2$s دقیقه</string>
+    <string name="usage_source_note">اعداد مصرف از بخش usageMetadata پاسخ خودِ سرور جمینای خوانده می‌شوند و دقیق‌اند. گوگل برای کلید API راهی برای خواندن مستقیم «سهمیهٔ باقی‌مانده» ارائه نمی‌دهد؛ به همین دلیل سقف هر مدل از پیام خطای خود گوگل (وقتی به محدودیت برسید) خوانده و ذخیره می‌شود، یا می‌توانید آن را دستی وارد کنید. مصرف همین کلید در برنامه‌ها یا سایت‌های دیگر اینجا دیده نمی‌شود؛ آمار رسمی و کامل در Google AI Studio است.</string>
+    <string name="usage_open_ai_studio">مشاهدهٔ آمار رسمی در Google AI Studio</string>
+    <string name="usage_reset">صفر کردن آمار امروز</string>
+    <string name="usage_reset_done">آمار مصرف امروز صفر شد.</string>
+    <string name="usage_limits_saved">سقف محدودیت ذخیره شد.</string>
+    <string name="usage_limits_dialog_title">سقف محدودیت %1$s</string>
+    <string name="usage_limits_dialog_desc">عددی را که در صفحهٔ Rate limits حساب AI Studio برای این مدل می‌بینید وارد کنید. خالی گذاشتن هر خانه یعنی استفاده از مقداری که گوگل خودش اعلام کرده است.</string>
+    <string name="usage_limit_rpd">درخواست در روز (RPD)</string>
+    <string name="usage_limit_tpm">توکن ورودی در دقیقه (TPM)</string>
+    <string name="usage_limits_save">ذخیره</string>
+    <string name="usage_page_url" translatable="false">https://aistudio.google.com/usage</string>
+</resources>

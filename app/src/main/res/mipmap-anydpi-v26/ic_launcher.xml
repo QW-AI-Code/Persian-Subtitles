@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Standard full-bleed adaptive icon (108dp layers, 72dp visible, 66dp safe zone).
+
+    The whole artwork (gradient plate + bubbles, arrows and play button) is the
+    background layer, rendered edge to edge, so every launcher mask — circle,
+    squircle, rounded square, teardrop — is filled completely and the icon has the
+    same visual size as every other app. The glyphs sit inside the 66dp safe zone,
+    so no mask can clip them.
+
+    The monochrome layer is a white silhouette of the glyphs, used by Android 13+
+    themed icons.
+-->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@mipmap/ic_launcher_background" />
+    <foreground android:drawable="@android:color/transparent" />
+    <monochrome android:drawable="@mipmap/ic_launcher_monochrome" />
+</adaptive-icon>

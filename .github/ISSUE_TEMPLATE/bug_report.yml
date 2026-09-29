@@ -1,0 +1,45 @@
+name: گزارش اشکال / Bug report
+description: مشکلی در ترجمه یا برنامه پیدا کردید؟ / Something broken?
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: چه اتفاقی افتاد؟ / What happened?
+      description: توضیح کوتاه مشکل و اینکه انتظار داشتید چه شود. / Describe the problem and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: مراحل بازتولید / Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: نسخهٔ برنامه / App version
+      placeholder: "1.0.0 (arm64-v8a)"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: گوشی و نسخهٔ اندروید / Device and Android version
+      placeholder: "Pixel 6, Android 14"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: مدل Gemini انتخاب‌شده / Selected Gemini model
+      placeholder: "gemini-2.5-flash"
+  - type: textarea
+    id: extra
+    attributes:
+      label: اطلاعات بیشتر / Anything else
+      description: اسکرین‌شات یا نمونه‌ای از خطوط زیرنویس (بدون کلید API!). / Screenshots or sample cues — never paste your API key.

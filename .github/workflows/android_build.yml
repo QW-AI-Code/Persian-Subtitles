@@ -1,0 +1,177 @@
+name: Persian Subtitles Android Build
+
+# One single workflow: it checks the code, builds the three release APKs and
+# publishes them on the Releases page.
+#
+# The decisive point, copied from the working New-Habit workflow: publishing runs
+# on EVERY push to main. No tag has to be created by hand, no workflow has to be
+# started by hand. A push is enough.
+#
+# Publishing uses the `gh` CLI (pre-installed on the runner) instead of a
+# third-party action, so if anything goes wrong the log shows the exact API error.
+#
+# If the run fails with HTTP 403 while creating the release, the repository itself
+# forbids writing: Settings -> Actions -> General -> Workflow permissions must be
+# "Read and write permissions".
+
+on:
+  push:
+    branches: [main, master]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag (leave empty to use the versionName from build.gradle.kts)"
+        required: false
+        default: ""
+
+concurrency:
+  group: persian-subtitles-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and publish Persian Subtitles APKs
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # A repository uploaded as a ZIP through the GitHub website loses the
+      # executable bit on gradlew, and ./gradlew then dies with
+      # "Permission denied". Restoring it costs nothing and removes that failure.
+      - name: Make the Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Resolve app name and version
+        id: meta
+        env:
+          INPUT_TAG: ${{ github.event.inputs.release_tag }}
+        run: |
+          set -eu
+          version=$(grep -m1 'val appVersionName' app/build.gradle.kts | sed -E 's/.*"([^"]*)".*/\1/')
+          [ -n "$version" ] || version="1.0.0"
+          if [ -n "${INPUT_TAG:-}" ]; then
+            tag="$INPUT_TAG"
+          elif [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            tag="${GITHUB_REF_NAME}"
+          else
+            tag="v${version}"
+          fi
+          version="${tag#v}"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then publish=false; else publish=true; fi
+          echo "tag=$tag"         >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"
+          echo "tag=$tag version=$version publish=$publish"
+
+      - name: Validate resources
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          for xml in Path('app/src/main/res').rglob('*.xml'):
+              ET.parse(xml)
+          print("all resource XML files parse")
+          PY
+
+      - name: Unit tests
+        run: ./gradlew --no-daemon testDebugUnitTest
+
+      - name: Prepare signing material
+        id: signing
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+        run: |
+          path="$RUNNER_TEMP/release.jks"
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ] || [ -z "$KEY_ALIAS" ]; then
+            echo "No keystore secrets found, release APKs will be signed with the debug key."
+            echo "enabled=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "$KEYSTORE_BASE64" | base64 --decode > "$path"
+          keytool -list -keystore "$path" -storepass "$KEYSTORE_PASSWORD" >/dev/null
+          echo "enabled=true" >> "$GITHUB_OUTPUT"
+
+      - name: Build release APKs
+        env:
+          KEYSTORE_PATH: ${{ steps.signing.outputs.enabled == 'true' && format('{0}/release.jks', runner.temp) || '' }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: ./gradlew --no-daemon --stacktrace assembleRelease
+
+      - name: Collect the three release APKs
+        env:
+          APP_VERSION: ${{ steps.meta.outputs.version }}
+        run: |
+          set -eu
+          out=app/build/outputs/apk/release
+          echo "Gradle produced:"; find "$out" -name '*.apk' -print
+          mkdir -p release-files
+          universal=$(find "$out" -name '*universal*.apk' | head -n 1)
+          [ -n "$universal" ] || universal=$(find "$out" -name 'app-release.apk' | head -n 1)
+          [ -n "$universal" ] || universal=$(find "$out" -name '*.apk' | head -n 1)
+          if [ -z "$universal" ]; then echo "::error::No APK was produced"; exit 1; fi
+          cp "$universal" "release-files/Persian-Subtitles-v${APP_VERSION}-universal.apk"
+          for abi in arm64-v8a armeabi-v7a; do
+            src=$(find "$out" -name "*-$abi-*.apk" | head -n 1)
+            [ -n "$src" ] || src="$universal"
+            cp "$src" "release-files/Persian-Subtitles-v${APP_VERSION}-$abi.apk"
+          done
+          ( cd release-files && sha256sum *.apk > SHA256SUMS.txt )
+          echo "Will publish:"; ls -lh release-files
+
+      # No actions/upload-artifact on purpose: everything attached to a workflow
+      # run ends up in the "Artifacts" box, which GitHub only ever serves as one
+      # ZIP. The APKs go to the Releases page as separate files instead.
+
+      - name: Publish GitHub Release
+        if: steps.meta.outputs.publish == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.meta.outputs.tag }}
+          APP_VERSION: ${{ steps.meta.outputs.version }}
+        run: |
+          set -eu
+          TITLE="Persian Subtitles v${APP_VERSION}"
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$TAG" release-files/* --repo "$GITHUB_REPOSITORY" --clobber
+            gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" \
+              --title "$TITLE" --notes-file .github/release-notes.md \
+              --draft=false --prerelease=false --latest
+          else
+            gh release create "$TAG" release-files/* --repo "$GITHUB_REPOSITORY" \
+              --title "$TITLE" --notes-file .github/release-notes.md \
+              --target "$GITHUB_SHA" --latest
+          fi
+          echo "Assets now published:"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name'
+          URL=$(gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json url --jq .url)
+          echo "Release URL: $URL"
+          {
+            echo "### 📦 $TITLE"
+            echo
+            echo "| File | Size |"
+            echo "|---|---|"
+            for f in release-files/*; do
+              echo "| \`$(basename "$f")\` | $(du -h "$f" | cut -f1) |"
+            done
+            echo
+            echo "[Open the release]($URL) — each APK is a separate download, no ZIP."
+          } >> "$GITHUB_STEP_SUMMARY"

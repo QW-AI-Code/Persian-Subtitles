@@ -1,0 +1,26 @@
+# Gradle / build
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+local.properties
+.kotlin/
+
+# Signing — never commit these
+keystore.properties
+*.keystore
+*.jks
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Output
+*.apk
+*.aab
+*.apks
+output-metadata.json
+dist/

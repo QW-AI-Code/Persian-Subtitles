@@ -1,0 +1,55 @@
+# Baseline profile — the single biggest reason the UI felt slow.
+#
+# Without it, Android has to interpret / JIT-compile the whole Compose UI on every
+# cold start, which is exactly what "scrolling takes forever" looks like on a real
+# phone. With it, these methods are AOT-compiled at install time.
+#
+# H = hot, S = startup, P = post-startup. AGP rewrites these rules through the R8
+# mapping automatically, so they keep working in the minified release build.
+
+# ---- the app itself -------------------------------------------------------
+HSPLcom/qwaicode/persiansubtitles/**->**(**)**
+Lcom/qwaicode/persiansubtitles/**;
+
+# ---- Compose runtime: recomposition, snapshots, remember -----------------
+HSPLandroidx/compose/runtime/**->**(**)**
+Landroidx/compose/runtime/**;
+
+# ---- Compose UI: measure, layout, draw, text -----------------------------
+HSPLandroidx/compose/ui/**->**(**)**
+Landroidx/compose/ui/**;
+
+# ---- Foundation: LazyColumn / LazyRow / scrolling ------------------------
+HSPLandroidx/compose/foundation/**->**(**)**
+Landroidx/compose/foundation/**;
+
+# ---- Material 3 components ----------------------------------------------
+HSPLandroidx/compose/material3/**->**(**)**
+Landroidx/compose/material3/**;
+
+HSPLandroidx/compose/animation/**->**(**)**
+Landroidx/compose/animation/**;
+
+# ---- Lifecycle / activity / viewmodel -----------------------------------
+HSPLandroidx/lifecycle/**->**(**)**
+Landroidx/lifecycle/**;
+HSPLandroidx/activity/**->**(**)**
+Landroidx/activity/**;
+
+# ---- Coroutines: every flow the UI collects -----------------------------
+HSPLkotlinx/coroutines/**->**(**)**
+Lkotlinx/coroutines/**;
+
+# ---- Data layer: Room queries and DataStore reads block the first frame --
+HSPLandroidx/room/**->**(**)**
+Landroidx/room/**;
+HSPLandroidx/sqlite/**->**(**)**
+Landroidx/sqlite/**;
+HSPLandroidx/datastore/**->**(**)**
+Landroidx/datastore/**;
+
+# ---- Kotlin stdlib / serialization --------------------------------------
+HSPLkotlin/**->**(**)**
+Lkotlin/**;
+HSPLkotlinx/serialization/**->**(**)**
+Lkotlinx/serialization/**;
